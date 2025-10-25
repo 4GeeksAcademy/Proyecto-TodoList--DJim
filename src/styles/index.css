@@ -10,9 +10,11 @@ body{
 }
 
 .container{
-    width: 50%;
+    width: 900px;
    background-color: #f4f4f4;
    align-items: center;
+   position: relative;
+}
 
 
 
@@ -44,7 +46,10 @@ span {
 
     visibility:hidden;
     margin-bottom: 5px ;
-    float: right;
+    position: absolute;
+    right: 1px;
+   
+    
 }
 
 li:hover span  {
@@ -57,13 +62,12 @@ h1 {
 }
 
 ul li {
-    border: 1px solid rgb(190, 186, 186);
+    border: 1px solid grey;
     padding: 5px;
     
 }
 
 input {
-    border-radius:none;
     width: 100%;
     border: none;
     

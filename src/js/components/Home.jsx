@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 
 
+
+
 //create your first component
 const Home = () => {
 
 let [tarea, setTarea] = useState("")
 let [lista, setLista] = useState([])
+
+
 
 
 const escribirTarea = (event) =>{
@@ -21,28 +25,46 @@ const agregarTarea = (event) =>{
    const eliminarTarea = (posicion) =>{
 	setLista (lista.filter((item, index)=>index!==posicion))
    }
+
+ 
 	
    return (
-		<div >
-			      
-			<div className="container">
+		<div className="container"> 
+				
 				<h1 className="text-center"> TodoList </h1>    
 			    <input type="text" placeholder="Whats needs to be done?" onChange={escribirTarea} value={tarea} onKeyDown={agregarTarea}/>
 			
-			<ul className ="list-unstyled">
+                 <div>
+					
+                <ul className ="list-unstyled" >
+
+					
+						
+														
+			{lista.map((item, index)=>(<li className="list-group-item" key={index}>{item} <span onClick={()=>eliminarTarea(index)}>❌</span ></li>))}
 			
-			{lista.map((item, index)=>(<li className="list-group-item" key={index}>{item}<span onClick={()=>eliminarTarea(index)}>  ❌ </span></li>))}
-			
-			
+										
+
+ 
+					
+		
+	
 			
 			
 			</ul>
 			
 			<p className="paper">{lista.length} item left</p>
 			</div>
+			
+			
+
+			 
+
+			 </div>
+	
 
 			
-		</div>
+		
 	);
 };
 
